@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0" />
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #field {
+            width: 80px;
+            height: 80px;
+            background-color: darkviolet;
+            position: absolute;
+            
+        }
+
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            
+            $(document).mousemove(function(event) {
+                $('#field').css('top', event.pageY - 40).css('left', event.pageX - 40);
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <div id="field"></div>
+    </div>
+</body>
+
+</html>

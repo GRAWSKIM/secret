@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <style>
+
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider/jquery.bxslider.js"></script>
+    <script type="text/javascript">
+        var env = {
+            "mode": "horizontal",
+            "slideMargin": 650,
+            "infiniteLoop":true,
+            "captions":true
+        };
+        $(onload).ready(function() {
+
+
+            $('.bxslider').bxSlider(env);
+        })
+    </script>
+</head>
+
+<body>
+    <ul class="bxslider">
+        <li><img src="list/1s.jpg" title="Funky roots" /></li>
+        <li><img src="list/2s.jpg" title="The long and winding road" /></li>
+        <li><img src="list/3s.jpg" title="Happy trees" /></li>
+        <li><img src="list/4s.jpg" title="Happy trees" /></li>
+        <li><img src="list/5s.jpg" title="Happy trees" /></li>
+        <li><img src="list/6s.jpg" title="Happy trees" /></li>
+        <li><img src="list/7s.jpg" title="Happy trees" /></li>
+        <li><img src="list/8s.jpg" title="Happy trees" /></li>
+
+    </ul>
+
+</body>
+
+</html>

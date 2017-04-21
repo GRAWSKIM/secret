@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html>
+	<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <style>
+        #content>div {
+            width: 400px;
+            background-color: antiquewhite;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //hide & show & toggle
+            //fadeOut & fadeIn & fadeToggle & fadeTo
+            //slideUp & slideDown & slideToggle
+            $('button').first().next().attr("disabled", 'disabled');
+            $('button').first().click(function() {
+                $(this).attr("disabled", 'disabled');
+                $('#content>div').slideUp(3000, function() {
+                    $('button').first().next().removeAttr('disabled');
+                });
+            });
+            $('button').first().next().click(function() {
+                $(this).attr("disabled", 'disabled');
+                $('#content>div').slideDown('slow', function() {
+                    $('button').first().removeAttr('disabled');
+                });
+            });
+            var tf = false;
+            $('button').last().click(function() {
+                $('#content>div').slideToggle('fast', function() {
+                    tf = !tf;
+                    if (tf) $('button').last().text('on');
+                    else $('button').last().text('off');
+                });
+            });
+            $('button:eq(2)').click(function() {
+                $('#content>div').fadeTo(3000, 0.5);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <button>hiden</button>
+        <button>show</button>
+        <button>0.5</button>
+        <button>toggle</button>
+        <div>Using the Builder API The Builder class is your one-stop shop for configuring new WebDriver instances. Rather than clutter your code with branches for the various browsers, the builder lets you set all options in one flow. When you call Builder#build(), all options irrelevant to the selected browser are dropped:</div>
+
+    </div>
+</body>
+</html>

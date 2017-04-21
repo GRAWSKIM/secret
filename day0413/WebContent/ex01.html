@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0"/>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		var succ=function(data){
+			var id=$(data).find('id').text();
+			var pw=$(data).find('password').text();
+			var name=$(data).find('name').text();
+			var arr=[id,pw,name];
+			$('span').each(function (idx){
+				$(this).text(arr[idx]);
+			})
+			
+		}
+		$.ajax({
+			'url':'MyXml.xml',
+			'method':'get',
+			'data':{ id:"abc" },
+			'success':succ
+			});
+		
+	});
+	</script>
+</head>
+
+<body>
+<h1>파싱정보</h1>
+<p>id:<span></span></p>
+<p>pw:<span></span></p>
+<p>name:<span></span></p>
+</body>
+</html>

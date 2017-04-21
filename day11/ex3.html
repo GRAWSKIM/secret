@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-sacle1.0" />
+
+    <script lang="javascript">
+        /*
+        for (i = 0; i < 5; i++) {
+            document.write("<h3>i=" + i + "</h3>");
+
+        }
+        document.write("<br>");
+        var a = 0;
+        while (a < 5) {
+            document.write("<h3>a=" + a + "</h3>");
+            a++;
+        }
+        document.write("<br>");
+        var x = 0;
+        do {
+            document.write("<h3>x=" + x + "</h3>");
+            x++;
+        } while (x < 5);
+
+        //1+3+5+7+9=25
+        var z = 1;
+        var s = 0;
+
+        while (z < 10) {
+
+            if (z != 9) {
+                document.write(z + "+");
+                s += z;
+            } else if (z == 9) {
+                document.write(z + "=");
+                s += z;
+            }
+            z += 2;
+
+        }
+        document.write(s);
+        */
+        
+        document.write("<table>");
+        var i = 1;
+        while (i < 10) {
+            document.write("<tr>");
+            var j = 2;
+            while (j < 10) {
+                document.write("<td>" + j + "x" + i + "=" + "</td>" + "<td>" +(i * j) + "</td>");
+                    j++;
+                }
+                document.write("</tr>");
+                i++;
+            }
+            document.write("</table>");
+    </script>
+    <style>
+        table{
+            text-align: center;
+            width:80%;
+        }
+        table,tr,td {border: solid 1px;
+        padding: 0px;
+        margin: 0px auto;}
+        td:nth-child(2n){
+            background-color: dodgerblue;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

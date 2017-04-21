@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>회원가입</h1>
+<form action = "result.jsp">
+	id:<input type = "text" name="id" placeholder="지워질거야">
+	pw:<input type = "password" name= "pw">
+	<br>취미<br>
+	<input type = "checkbox" name ="hobby" value="1">야구
+	<input type = "checkbox" name ="hobby" value="2">농구
+	<input type = "checkbox" name ="hobby" value="3">배구
+	<br>
+	<br>
+	<br>학력<br>
+	<input type="radio" name = "job" value="a">초
+	<input type="radio" name = "job" value="b">중
+	<input type="radio" name = "job" value="c">고
+	<input type="radio" name = "job" value="d">대
+	<input type="radio" name = "job" value="e">졸
+	<br>
+	<br>
+	<br>학력<br>
+	<select name = "job">
+	<optgroup label = "학력">
+		<option value="a1" >초졸</option>
+		<option value="b2">중졸</option>
+		<option value="c3">고졸</option>
+		<option value="d4">대졸</option>
+		</optgroup>
+		<optgroup label ="그외">
+		<option value= "e5">대학원</option>
+		</optgroup>
+	</select>
+	<br>
+	<br>
+	아무거나 적어욧
+	<textarea name = "content" rows ="5" cols ="15">작성해요</textarea>
+	<input type = "submit" value = "전송">
+	<input type = "reset"  value = "뭐라뭐라">
+	
+</form>
+</body>
+</html>

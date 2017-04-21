@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0" />
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #content>h1 {
+            margin: 0px auto;
+            width: 400px;
+            border-bottom: gray 3px solid;
+        }
+        
+        #content>form {
+            width: 400px;
+            margin: 0px auto;
+        }
+        
+        #content>form>p {
+            margin: 20px 0px;
+        }
+        
+        #content>form>p>label {
+            text-align: center;
+            width: 100px;
+            display: inline-block;
+        }
+        
+        #content>form>p:last-child {
+            text-align: center;
+        }
+        
+        #content>form>p>button {
+            width: 60px;
+            height: 40px;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        var chk = new Array();
+        $(document).ready(function() {
+            $('#content>form').submit(function() {
+                $('input').each(function(idx) {
+                    if ($(this).val() == '') {
+                        if (idx > 5) {
+                            chk.push($(this).attr('checked'));
+                        }
+                        if (idx == 4) {
+                            $(this).parent().append('<span>공란을 채워주세요</span>');
+                        } else {
+                            $(this).after('<span>공란을 채워주세요</span>');
+                        }
+                    } else if (idx == 2) {
+                        if ($(this).val() != $('input:eq(1)').val()) {
+                            $(this).after('<span>서로 달러</span>');
+                        }
+                    }
+
+                });
+                var hobby = "<span>하나이상 선택</span>";
+                for (var i = 0; i < chk.length; i++) {
+                    if (chk.pop == 'on') {
+                        hobby = "";
+                    }
+                }
+                $('p:eq(6)').append(hobby);
+
+
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <h1>sadsad</h1>
+        <form action="ex01.html">
+            <p><label for="id">아이디&nbsp;&nbsp;&nbsp;</label><input type="text" name="id" id="id"></p>
+            <p><label for="pw">비밀번호</label><input type="text" name="pw" id="pw"></p>
+            <p><label for="re">재입력&nbsp;&nbsp;&nbsp;</label><input type="text" id="re"></p>
+            <p><label for="name">이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" name="name" id="name"></p>
+            <p><label>주민번호</label><input type="text" name="juminN" size="6"><input type="text" name="juminN" size="7"></p>
+            <p>
+                <label for="edu">최종학력</label>
+                <select name="edu" id="edu"> 
+                    <option value="1">고졸</option>
+                    <option value="2">전문대졸</option>
+                    <option value="3">학사졸</option>
+                    <option value="4">대학원졸</option>
+                </select>
+            </p>
+            <p>
+                <label>취미</label>
+                <input type="checkbox" name="hobby" value="1" />영화
+                <input type="checkbox" name="hobby" value="2" />음악
+                <input type="checkbox" name="hobby" value="3" />미술
+            </p>
+            <p><button type="submit">보내기</button><button type="reset">비우기</button></p>
+        </form>
+
+    </div>
+</body>
+
+</html>

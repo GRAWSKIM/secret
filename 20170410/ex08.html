@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Page Title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+		<style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            #banner{
+/*
+                width: 960px;
+                height: 320px;
+                overflow: hidden;
+*/
+            }
+            #banner>ul{
+            }
+            #banner>ul>li{
+                list-style: none;
+                float: left;
+            }
+        </style>
+		<script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
+		<script type="text/javascript" >
+//                $('ul').append('<li><img src="imgs/big01.jpg" alt="1"></li>');
+            var cnt=4;
+            window.onload=function(){
+                show();
+                window.setInterval(loop,1000);
+            };
+            function show(){
+//                $('li').css('display','none').eq(0).css('display','inline-block').next().css('display','inline-block').next().css('display','inline-block');
+                $('li').each(function(idx){
+                if(idx>cnt-1)$(this).css('display','none');
+                    
+                else $(this).css('display','inline-block');
+                });
+            }
+            function loop(){
+                $('li:first').appendTo('ul');
+                $('ul').append('li:first');
+                show();
+            }
+        </script>
+	</head>
+
+	<body>
+        <div id="content">
+            <div id="banner">
+                <ul>
+                   
+                    <li><img src="list/1s.jpg" alt="1"></li>
+                    <li><img src="list/2s.jpg" alt="2"></li>
+                    <li><img src="list/3s.jpg" alt="3"></li>
+                    <li><img src="list/4s.jpg" alt="4"></li>
+                    <li><img src="list/5s.jpg" alt="5"></li>
+                    <li><img src="list/6s.jpg" alt="6"></li>
+                    <li><img src="list/7s.jpg" alt="7"></li>
+                    <li><img src="list/8s.jpg" alt="8"></li>
+                </ul>
+
+            </div>
+
+        </div>
+	</body>
+</html>

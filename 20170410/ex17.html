@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #area {
+            width: 600px;
+            height: 500px;
+            background-color: bisque;
+        }
+        
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: dimgrey;
+        }
+
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider/jquery.bxslider.js"></script>
+    <script type="text/javascript">
+        $('.bxslider').bxSlider({
+            mode: 'fade',
+            captions: true
+        });
+        var env1 = {
+            'margin-left': '+=10px',
+            'width': '100px',
+            'height': '100px',
+            'opacity': 0.3
+        };
+
+
+        $(document).ready(function() {
+            $('button').click(function() {
+                $('#box').animate({
+                    'height': 'hide'
+                }).animate({
+                    'height': 'show'
+                }).animate({
+                    'height': 'toggle'
+                });
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <h1>애니메이션</h1>
+        <button>start</button>
+        <div id="area">
+
+            <div id="box"></div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

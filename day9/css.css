@@ -1,0 +1,15 @@
+ /*  지시자{속성:값;}
+                지시자{속성(다중): 값1 값2 값3;}
+            */
+            h1{color: beige;}
+            h2{}
+          
+            #p1{color:blue}
+            .c1{color:chocolate}
+            .c2{background: black}
+            /*
+                
+                #id지시자{}
+                id는 한개씩, 다중사용 불가능
+                .class지시자{}
+            */

@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #menu {
+            background-color: aqua;
+        }
+        
+        #footer {
+            background-color: azure;
+        }
+        
+        #content,
+        #footer {
+            clear: both;
+        }
+        
+        #banner {
+            margin: 0px auto;
+            width: 480px;
+            
+            overflow: hidden;
+            position: relative;
+        }
+        
+        #banner>ul {
+            width: 40000px;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #banner>ul>li {
+            float: left;
+            list-style: none;
+        }
+        
+        #banner>a {
+            float: left;
+            position: absolute;
+            top: 240px;
+            left: 0px;
+            height: 55px;
+            width: 75px;
+            background-image: url(imgs/left.jpg);
+        }
+        
+        #banner>a:nth-child(2) {
+            left: 359px;
+            background-image: url(imgs/right.jpg);
+        }
+
+    </style>
+    <script lang="javascrpit">
+        var banner, ul, atag, tmp;
+        var x = 0;
+        window.onload = function() {
+            banner = document.querySelector("#banner");
+            ul = document.querySelector("#banner>ul");
+            atags = document.querySelectorAll('#banner>a');
+            ul.style.marginLeft = '0px';
+
+            atags[0].onclick = function() {
+                if (x > (-440 * 6)) x -= 440;
+
+                var now = parseInt(ul.style.marginLeft);
+                tmp = now;
+
+                window.setTimeout(myNxtAni, 100)
+
+
+                return false;
+            }
+            atags[1].onclick = function(e) {
+                e.preventDefault();
+                if (x < 0) x += 440;
+                ul.style.marginLeft = x + "px";
+
+            }
+
+            function myNxtAni() {
+                tmp -= 10;
+                if (tmp == x) {
+                    ul.style.marginLeft = tmp + "px";
+                } else {
+                    ul.style.marginLeft = tmp + "px";
+                    window.setTimeout(myNxtAni, 100)
+                }
+
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="header">
+        <h1>한빛교육센터</h1>
+    </div>
+    <div>
+        <div id="menu">
+            <a href="#">me1</a>
+            <a href="#">me2</a>
+            <a href="#">me3</a>
+            <a href="#">me4</a>
+        </div>
+    </div>
+    <div id="content">
+        <div id="banner">
+            <ul>
+                <li><img src="imgs/1.jpg" alt="img1"></li>
+                <li><img src="imgs/2.jpg" alt="img2"></li>
+                <li><img src="imgs/4.jpg" alt="img4"></li>
+                <li><img src="imgs/5.jpg" alt="img5"></li>
+                <li><img src="imgs/6.jpg" alt="img6"></li>
+                <li><img src="imgs/7.jpg" alt="img7"></li>
+                <li><img src="imgs/8.jpg" alt="img8"></li>
+
+            </ul>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+    </div>
+    <div id="footer">
+        <p>copyright</p>
+    </div>
+
+
+</body>
+
+</html>

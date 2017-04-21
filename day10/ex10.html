@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+     
+            <link rel="stylesheet" type="text/css" href="css/960.css"/>
+        <style>
+            div{
+                padding: 0px;
+                margin: 0px auto;
+            }
+            .container_12{
+                border:dotted red 1px;
+                box-sizing: border-box;
+            }
+            .grid_4,.grid_1,.grid_9,grid_3{
+                padding: 0px;
+                margin-right: 0px;
+            }
+            #header{
+                background-color: deeppink;
+                height: 100px;
+            }
+            #nav{
+                 background-color: crimson;
+            }
+           
+            li{
+                float: left;
+            }  
+            ul{
+                display: none;
+            }
+            #nav:nth-child(3):hover{
+               
+            }
+            #section{
+                background-color:darkorange
+                
+            }
+            #aside{
+                background-color: coral;
+            }
+            #footer{
+                background-color: firebrick;
+                text-align: center;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container_12">
+           <div id="header" class="grid_12">logo</div>
+
+           <div id="nav" class="grid_4">&nbsp;</div>
+           <div id="nav" class="grid_1">menu
+                <ul>
+                    <li>menu1</li>
+                    <li>menu2</li>
+                    <li>menu3</li>
+                    <li>menu4</li>
+                </ul>     
+           </div>
+           <div id="nav" class="grid_1">menu
+                <ul>
+                    <li>menu1</li>
+                    <li>menu2</li>
+                    <li>menu3</li>
+                    <li>menu4</li>
+                </ul>     
+           </div>
+           <div id="nav" class="grid_1">menu
+                <ul>
+                    <li>menu1</li>
+                    <li>menu2</li>
+                    <li>menu3</li>
+                    <li>menu4</li>
+                </ul>     
+           </div>
+           
+           <div id="nav" class="grid_4">&nbsp;</div>
+       
+           <div id="section"class="grid_9">
+               <h1>제목</h1>
+           </div>
+           <div id="aside"class="grid_3">광고</div>
+           <div id="footer" class="grid_12">copyright</div>
+        </div>
+    </body>
+    
+</html>

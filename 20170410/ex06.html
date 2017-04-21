@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <style>
+        #header {
+            display: none;
+        }
+
+    </style>
+    <script type="text/javascript" src="js./jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            $('a[href="http://daum.net"]').css('backgroundColor', 'yellow');
+            $('a[title]').css('backgroundColor', 'red');
+            $("a[href$='com']").css('border', 'solid 1px red');
+            $("a[href*='@']").css('border', 'solid 1px blue');
+            //                $("a[href^='mailto']").css('border','solid 1px red');
+            $('div:hidden').css('display', 'block');
+            $('li:visible').css('display', 'none');
+        };
+
+    </script>
+</head>
+
+<body>
+    <div id="header">
+        <h1>제목</h1>
+    </div>
+    <div id="content">
+        <ul>
+            <li><a href="http://naver.com">네이버</a></li>
+            <li><a href="http://daum.net">다음</a></li>
+            <li><a href="https://google.com">구글</a></li>
+            <li><a href="http://hanbitedu.co.kr" title="한빛">한빛교육센터</a></li>
+            <li><a href="mailto:master@hanbit.gq">관리자에게</a></li>
+        </ul>
+
+
+    </div>
+</body>
+
+</html>

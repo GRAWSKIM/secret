@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0"/>
+<style>
+	*{
+		margin:0px;
+		padding:0px;
+	}
+	#menu{
+		background-color: black;
+	}
+	#footer{
+		background-color: gray;
+	}
+	#content>#board{
+		width:300px;
+		height:200px;
+		margin:0px auto;
+		border: 1px solid red;
+		overflow: auto;
+	}
+	#content>#board>ul{
+		width:3000px;
+	}
+	#content>#board>ul>li{
+		float: left;
+		list-style: none;
+	}
+	
+	
+</style>
+<script type="text/javascript">
+	var board,xhr;
+	var url="./guest/mydata.json"
+	window.onload= function(){
+		board=document.querySelector("#board");
+		start();
+	
+		function imgload(){
+			if(xhr.readyState==4 && xhr.status==200){
+				var msg="<ul>";
+				var txt= xhr.responseText;
+				var obj=JSON.parse(txt);
+				for(var i = 0; i<obj.data.length;i++){
+					msg+="<li>";
+					msg+='<img src ="imgs/list/';
+					msg+=obj.data[i].src;
+					msg+='"/>';
+					msg+="</li>";
+				}
+				
+				msg+="</ul>";
+				board.innerHTML=msg;
+			}
+		}
+	function start(){
+		xhr = new XMLHttpRequest();
+		xhr.onreadystatechange=imgload;
+		xhr.open('get', url, true);
+		xhr.send();
+	}
+	
+	}
+</script>
+</head>
+<body>
+	<div id="header">
+	<h1>sadasdsa</h1></div>
+	<div id="menu">
+		<a href="#">m1</a>
+		<a href="#">m2</a>
+		<a href="#">m3</a>
+		<a href="#">m4</a>
+	</div>
+	<div id="content">
+		<h1>이미지</h1>
+		<div id="board"></div>
+	</div>
+	<div id="footer"></div>
+
+</body>
+</html>

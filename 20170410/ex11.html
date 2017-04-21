@@ -1,0 +1,82 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Page Title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+		<style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            #content>div{
+                width: 200px;
+                height: 100px;
+                background-color: aqua;
+            }
+            #content>button{
+                width: 100px;
+                height: 50px;
+                margin: 20px;
+            }
+            #content>div>button{
+                width: 50px;
+                height: 25px;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+//            $('#content>div').mouseover(function(){
+//                $(this).css('background-color','red');
+//            }).mouseout(function(){
+//                $(this).css('background-color','aqua');
+//            });
+            $('#content>div').on('mouseover',function(){
+                $(this).css('background-color','red');
+            }).on('mouseout',function(){
+                $(this).css('background-color','aqua');
+            });
+//            $('#content>button').mouseover(function(){
+//                $(this).next().css('background-color','red');
+//            }).mouseout(function(){
+//                $(this).next().css('background-color','aqua');
+//            });
+//            $('#content>button').focusin(function(){
+//                $(this).next().css('background-color','red');
+//            }).focusout(function(){
+//                $(this).next().css('background-color','aqua');
+//            });
+    $('#content>button').on('mouseover focusin',function(){
+        $(this).next().css('background-color','red');
+    });
+    $('#content>button').on('mouseout focusout',function(){
+        $(this).next().css('background-color','aqua');
+    });
+    $('#content>button').click(function(){
+        $('#content>div').html('<button>add</button>');
+    });
+    /*
+    1.0~    타겟.bind('이벤트',기능);
+    ~1.4.2~ .delegate(타겟,'이벤트',기능);
+    1.4~1.7 타겟.live('이벤트',기능);
+    1.7     .on('이벤트',타겟,기능);
+    */
+    $(document).on('click','#content>div>button',function(){
+        alert("add버튼 눌림");
+    });
+        });
+        </script>
+	</head>
+
+	<body>
+        <div id="content">
+            <h1>이벤트</h1>
+            <button>btn</button>
+            <div></div>
+
+
+        </div>
+	</body>
+</html>

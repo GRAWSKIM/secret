@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script lang="javascript">
+/*ajax 통신*/
+	var content,table,menu,atag,page1,page2;
+	var xhr;
+	window.onload = function(){
+		content =document.getElementById("content");
+		table=content.getElementsByTagName("table")[0];
+		start();
+		menu=document.getElementById("menu");
+		atag=document.getElementsByTagName("a");
+		atag[0].addEventListener('click',showlist);
+		atag[1].addEventListener('click',addform);
+		page1=content.querySelector("#page1");
+		page2=content.querySelector("#page2");
+		page2.style.display="none";
+		
+		page2.addEventListener("submit",insertOne);
+		
+	};
+	function insertOne(){
+		var inputs = page2.querySelectorAll("input");
+		
+		var url="insert.html?num="+inputs[0].value+"&kor="+inputs[1].value+"&eng="+inputs[0].value+"&math="+inputs[3].value;
+		xhr = new XMLHttpRequest();
+		xhr.onreadystatechange=function(){};
+		xhr.open('get', url, true);
+		xht.send();
+	}
+	function showlist(event){
+		event.preventDefault();
+		window.location.reload();
+	}
+	function addform(event){
+		event.preventDefault();
+		page1.style.display="none";
+		page2.style.display="block";
+	}
+	function start(){
+		var msg="";
+		var url= "stu.xml";
+		xhr = new XMLHttpRequest();
+		xhr.onreadystatechange=function(){	
+			if(xhr.readyState==4){
+				if(xhr.status==200){
+					var obj=xhr.responseXML;
+					var stus=obj.getElementsByTagName("student");
+					for(var i= 0;i<stus.length;i++){
+						var arr = stus[i].children;
+						msg+="<tr><td>"+arr[0].childNodes[0].nodeValue+"</td>";
+						msg+="<td>"+arr[1].childNodes[0].nodeValue+"</td>";
+						msg+="<td>"+arr[2].childNodes[0].nodeValue+"</td>";
+						msg+="<td>"+arr[3].childNodes[0].nodeValue+"</td></tr>";
+						
+					}
+					table.innerHTML=table.innerHTML+msg;
+				}	
+			}
+		}
+		xhr.open('get',url, true);
+		
+		xhr.send();
+	}
+</script>
+</head>
+<body>
+	<div id="header">
+		<h1>학생성적관리프로그램</h1>
+	</div>
+	<div id="menu">
+		<a href="/day0406/guest/list.html">List</a>
+		<a href="/day0406/guest/add.html">입력</a>
+		
+	</div>
+	<div id="content">
+		<div id="page1">
+		<h1>성적리스트</h1>
+		<table>
+			<tr>
+				<th>학번</th>
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+			</tr>
+		
+		</table>
+		</div>
+		<div id="page2">
+		<h1>입략</h1>
+		<form>
+			<p>
+				<label>학번</label><input type="text" name="num">
+			</p>
+			<p>
+				<label>국어</label><input type="text" name="kor">
+			</p>
+			<p>
+				<label>영어</label><input type="text" name="eng">
+			</p>
+			<p>
+				<label>수학</label><input type="text" name="math">
+			</p>
+			<p>
+			<input type="submit" value="입력" >
+			<input type="reset" value="CNLTH">
+			</p>
+		</form>
+		</div>
+	</div>
+	<div id="footer">
+		<p>copyright (c) </p>
+	</div>
+</body>
+</html>

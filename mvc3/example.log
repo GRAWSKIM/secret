@@ -1,0 +1,5 @@
+DEBUG main com.hb.model.Guest04DaoTest - 개발메세지
+INFO main com.hb.model.Guest04DaoTest - 경고
+WARN main com.hb.model.Guest04DaoTest - 주의
+ERROR main com.hb.model.Guest04DaoTest - 에러
+FATAL main com.hb.model.Guest04DaoTest - 항상

@@ -1,0 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!-- content end -->
+		</tr>
+	<!-- footer -->
+		<tr>
+		<td colspan="2" bgcolor = "#aaffbb">Contact imyosup@nate.com for more information.
+	Copyright  2015 ¾ð´õ70. All rights reserve</td>
+		</tr>
+	<!-- footer end -->
+	</table>

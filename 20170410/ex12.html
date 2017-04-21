@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0" />
+    <style>
+        #content {
+            text-align: center;
+        }
+        
+        #field {
+            margin: 0px auto;
+            width: 315px;
+            overflow: hidden;
+        }
+        
+        ul {
+            background-color: fuchsia;
+            margin-left: -840px;
+            padding: 0px;
+            width: 2520px;
+            height: 88px;
+        }
+        
+        #content>div>ul>li {
+            float: left;
+            list-style: none;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        var mleft = 0;
+
+        $(document).ready(function() {
+            var obj = $('#field>ul').html();
+            $('#field>ul').append(obj);
+            $('#field>ul').prepend(obj);
+            $('#field>a').last().click(function(event) {
+                event.preventDefault();
+                if (mleft == -1680) mleft = -840;
+                mleft -= 105;
+                console.log(mleft)
+                $('#field>ul').css('margin-left', mleft);
+
+            })
+            $('#field>a').first().click(function(event) {
+                event.preventDefault();
+                if (mleft == 0) mleft = -840;
+                mleft += 105;
+                console.log(mleft)
+                $('#field>ul').css('margin-left', mleft);
+
+            })
+            var bang = function() {
+                $('#field>a').last().trigger('click');
+            };
+            window.setInterval(bang, 1000);
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <h1>제목</h1>
+        <div id="field">
+            <ul>
+                <li><img src="list/1s.jpg" alt="img1"></li>
+                <li><img src="list/2s.jpg" alt="img2"></li>
+                <li><img src="list/3s.jpg" alt="img3"></li>
+                <li><img src="list/4s.jpg" alt="img4"></li>
+                <li><img src="list/5s.jpg" alt="img5"></li>
+                <li><img src="list/6s.jpg" alt="img6"></li>
+                <li><img src="list/7s.jpg" alt="img7"></li>
+                <li><img src="list/8s.jpg" alt="img8"></li>
+            </ul>
+            <a href="#">prev</a>
+            <a href="#">next</a>
+        </div>
+    </div>
+</body>
+
+</html>

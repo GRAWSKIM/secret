@@ -1,0 +1,94 @@
+<!Doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <style>
+            img{width: 19%}
+            div{background-color: aquamarine}
+            li{background-color: fuchsia}
+            /*content아래에 p태그에만 스타일 적용*/
+            #content>p{background-color: deeppink}
+            /*헤더 다음에 div 다음에 div*/
+            #header+div+div{color: chartreuse }
+            #header+div+div>h1{color:cyan}
+            /*~는 다음에오는 div모두를 선택*/
+            #header~div{text-underline-position: alphabetic}
+            #menu>ul>li{}
+            /*서로 다른 엘리먼트에 각각 적용*/
+            #footer,li{}
+            #menu>ul>li:nth-child(2/*2n 2의 배수 2n-1 홀수 */){background:black}
+            table{ width:400px}
+            td{background-color:forestgreen}
+            table td:nth-child(even){background-color: dimgrey }
+            table>tbody>tr:nth-child(even)>td{background-color: deepskyblue }
+            #content>p:nth-child(2){color: rebeccapurple;
+                font-weight:bold;}
+            #menu>ul>li:nth-child(1)>a{
+                text-decoration: none;
+                color:darksalmon;
+                display: block;}
+            #menu>ul li,#menu>ul li>a{
+                display: inline-block;
+                width:150px;
+                text-decoration: none;
+                font-size: 15pt;
+                text-align: center;
+                
+            }
+           
+            
+        </style>
+            
+    </head>
+    <body>
+        <div id="header">
+        <img alt="log" src="http://post.phinf.naver.net/MjAxNzAzMTZfNSAg/MDAxNDg5NjU1NDExNjg1.hSb65mpJ52od7XmFQyNXVJ0TxOGSMkkvHegxxp2v7mcg.45F7qRLCAcMAsibLwD8oqfdI0zlsgr0gLnBjkxcYnK0g.JPEG/image_9046657851489655364260.jpg?type=w1200">
+        </div>
+        <div id='menu'>
+            <ul>
+                <li>
+                    <a href="#">11111</a>
+                </li>
+                 <li>
+                    <a href="#">22222</a>
+                </li>
+                 <li>
+                    <a href="#">33333</a>
+                </li>
+                 <li>
+                    <a href="#">44444</a>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+                <h1>대제목</h1>
+                <p></p>
+                <p>환영해</p>
+        </div>        
+        <div id="footer">
+            <p></p>
+        </div>
+        <table>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>2 </td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+            </tr>            
+        </table>
+    </body>
+
+</html>

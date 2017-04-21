@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0"/>
+
+<style type="text/css">
+
+#header,#footer{
+	background-color: gray;
+}
+</style>
+<script type="text/javascript">
+	var form,content,id;
+	window.onload=function(){
+		form=document.querySelector("#content>form");
+		id=document.querySelector('#content>form>p>input')[0];
+		content=document.querySelector('#content');
+		form.addEventListener("submit", loadFunc);
+	}
+	function loadFunc(event){
+		event.preventDefalut();
+		login();
+	}
+	function login(){
+		var url='http://localhost:8080/ajax01/login.jsp?id='+id.value;
+		
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange()=function(){
+			content.innerHTML=xhr.responseText;
+			
+		};
+		xhr.open('get',url,true);
+		//세번째값을 true 비동기,false동기
+		xhr.send();
+		
+	}
+</script>
+</head>
+<body>
+	<div id="header">
+		<h1>dfssdf</h1>
+	</div>
+	<div id="content">
+		<form action="login.jsp">
+		<p><label>id</label><input type="text" name="id"/></p>
+		
+		<p><label>pw</label><input type="text" name="pw"/></p>
+		
+		<p><input type="submit" value="로그인"/>
+			<input type="reset" value="취소"/></p>
+		</form>
+	</div>
+	<div id="footer">
+		<p>copyright</p>
+	</div>
+</body>
+</html>

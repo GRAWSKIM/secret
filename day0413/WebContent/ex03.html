@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0"/>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$('button').eq(0).click(function(){
+			$.ajax({
+				'url':'data04.json',
+				'method':'GET',
+				'dataType':'json',
+                'success':function(data){
+					$('span').text(data.weather[0].id);
+				}
+			})	
+		}).next().click(function(){
+			$.ajax({
+				'url':'data07.json',
+				'method':'GET',
+				'dataType':'json',
+                'success':function(data){
+					var city_name=$(data).find('country').text();
+					$('span').text(city_name);
+				}
+			})
+			}).next().click(function(){
+			$.ajax({
+				'url':'data05.json',
+				'method':'GET',
+				'dataType':'jsonp',
+				'crossDomain':true,
+				'async':true,
+				'jsonpCallback':function(json){
+					$('span').text(json.sites[0].domainName);
+				},
+                'success':function(data){
+					
+				}
+			})
+			}).next().click(function(){
+				$.ajax({
+					'url':'data06.json',
+					'method':'GET',
+					'dataType':'html',
+	                'success':function(data){
+						$('span').html(data);
+					}
+				})
+				})
+	
+		
+		
+	})
+</script>
+</head>
+<body>
+
+	<h1>크로스도메인해결</h1>
+	<button>json</button>
+	<button>etc</button>
+	<button>xml</button>
+	<button>html</button>
+	<div>
+	</div>
+<p><span></span></p>
+
+</body>
+</html>

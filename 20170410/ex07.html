@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+     
+        $(window.document).ready(function() {
+            var h1 = $('h1');
+          
+            $('button').click(function(){
+                
+                h1.text($('input').val());
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h1>hello</h1>
+    <input type="text">
+    <button>제목수정</button>
+    
+    
+</body>
+</html>

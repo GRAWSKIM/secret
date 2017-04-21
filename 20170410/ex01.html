@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        h1 {
+            backge
+            background-color: azure;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+
+            var t1 = $('h1');
+            var t2 = document.querySelector('h1');
+            //alert(t1==t2);
+            //t1은 제이쿼리객체 t2는 엘리먼트 비교하면 false가 나온다
+            //t2에는 제이쿼리 문법 사용 못함
+
+            
+            var obj={
+                'background-color':'red',
+                'color':'blue'
+            };
+            $('h1').css(obj);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>hello</h1>
+    <h1>hello2</h1>
+    <h1>hello3</h1>
+
+
+</body>
+</html>

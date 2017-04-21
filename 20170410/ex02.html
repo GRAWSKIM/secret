@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+      
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        cnt=0;
+        function Func(){
+            cnt++;
+            console.log('Func run:'+cnt);
+            return Func;
+        }
+        window.onload = function() {
+           
+        Func()()()()()()()()();     $('#content>h1').css('backgroundColor','black').css('color','blue').parent().children('ul').css('backgroundColor','red');
+        }
+    </script>
+</head>
+
+<body>
+    <div id='content'>
+        <h1>목록</h1>
+            <ul>
+                <li>서론</li>
+                <li>본론</li>
+                <li>결론</li>
+            </ul>
+        
+    </div>
+</body>
+</html>

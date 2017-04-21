@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		
+		$('button').click(function(){
+			var idd=$('input[type="text"]').val();
+			alert("id:"+idd);	
+			$.get('MyXml.xml',{'id':idd},function(data){
+				
+				alert("id:"+idd)
+				alert(data+"무언가")
+				var data_id= $(data).find('id').text();
+				alert(data_id+"=data_id")
+				$('span').text(data_id);	
+			});
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>get방식 파싱</h1>
+	<p>id:<input type="text"/></p>
+	<button>파싱</button>
+	<div>
+	id:<span></span>
+	</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <script lang="javascript">
+        function func1(){
+            //(document.)form.name(input).value;
+//            document.write("함수 정상적인 시작");
+            alert('정상적인 시작');
+        }
+        function func2(a,b){
+            alert('정상적인 시작2');
+            return a+b;
+        }
+        var tf =true;
+        function func3(){
+            var id=Fck.id.value;
+            
+                alert(id);
+            if(id==""){
+                tf=false;
+                alert("비었음");
+            }
+            return tf;
+        }
+        var c=2312;
+    </script>
+</head>
+<body>
+    <button onclick="func1();">함수실행</button>
+    <button onclick="func2(1,2);">함수2실행</button>
+    <form id="Fck" action="#">
+        <input type="text" name="id">
+        <button onclick="return func3()">aa</button>
+    </form>
+</body>
+</html>

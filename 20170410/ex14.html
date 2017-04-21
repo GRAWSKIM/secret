@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0" />
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #content>div {
+            width: 600px;
+            height: 300px;
+            background-color: antiquewhite;
+        }
+
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+//            $('button').first().click(function() {
+//                $('#content>div').hide(1000);
+//            }).next().click(function() {
+//                $('#content>div').show(1000);
+//            })
+            
+            $('button').first().click(function() {
+                $(this).attr("disabled",'disabled');
+                $(this).next().removeAttr('disabled');
+                $('#content>div').hide(1000);
+            }).next().click(function() {
+                $(this).attr("disabled",'disabled');
+                $(this).prev().removeAttr('disabled');
+                $('#content>div').show(1000);
+            })
+            
+            $('button').first().next().next().click(function(){
+                $('content>div').toggle(1000,hide());
+                   
+                })
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <button>hide</button>
+        <button>show</button>
+        <button>toggle</button>
+        <div>What is a digital subscription? What do I get when I subscribe? An unlimited New York Times digital subscription provides ongoing access to NYTimes.com from any computer or device, as well as access to apps on portable devices. When you subscribe, you’ll get access to articles and blog posts, as well as video, slide shows and other multimedia features. At the Education Rate, do I have access to the same features and benefits of a regular rate subscription? How do I qualify for the Education Rate? Do you offer education and corporate group subscriptions and rates? Do you have resources for educators interested in using The New York Times in their courses or outside the classroom? What if I don’t qualify for the Education Rate? Can I give a gift subscription at the discounted Education Rate to a student? Does registering on NYTimes.com with my school email address automatically give me the Education Rate for my digital subscription? What if I want to change the email address on my NYTimes.com account after my digital subscription at the Education Rate begins?</div>
+    </div>
+</body>
+
+</html>
